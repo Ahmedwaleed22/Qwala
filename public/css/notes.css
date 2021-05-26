@@ -1,0 +1,41 @@
+.notes {
+	background: #e2e2e2;
+	max-width: 1000px;
+	right: 0;
+	left: 0;
+	margin: 150px auto;
+	padding: 10px;
+	height: 600px;
+	margin-bottom: 20px;
+	padding: 34px 20px;
+	overflow-y: scroll;
+}
+.notes:before {
+	content: var(--name);
+	background: #009879;
+	color: #fff;
+	position: absolute;
+	top: 120px;
+	font-size: 30px;
+	min-width: 130px;
+	padding: 5px;
+	text-align: center;
+}
+.notes .note {
+	font-size: 30px;
+}
+.notes .note:first-child {
+	margin-top: 10px;
+}
+.notes .note:not(:last-child) {
+	margin-bottom: 30px;
+}
+.notes .note .index {
+	color: #009879
+}
+.notes .note .question {
+	margin-bottom: 10px;
+}
+.notes .note .answer {
+	color: rgb(241 111 0)
+}
