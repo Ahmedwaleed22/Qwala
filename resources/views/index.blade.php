@@ -19,7 +19,7 @@
                     <select name="course" onchange="window.open('?course=' + this.value, '_self');">
                         <option value="" selected disabled>
                             @if (!$request->filled('course'))
-                            Choose Course To Search
+                            Course
                             @else
                             {{ $request->course }}
                             @endif
@@ -56,8 +56,6 @@
                         <form method="post" action="/participate">
                             @csrf
                             <input type="hidden" name="course_id" value="{{ $row->getCourse->id }}" />
-                            <input type="hidden" name="date" value="{{ date('d/m/Y', time()) }}" />
-                            <input type="hidden" name="topic_id" value="0" />
                             <td><input name="enrollinbtn" onchange="this.form.submit()" type="checkbox" @if ($user->getCourse->count() > 0) checked @endif /></td>
                             <td>{{ \Carbon\Carbon::parse($row->participated_at)->format('d/m/Y') }}</td>
                             <td>{{ $row->getCourse->name }}</td>
@@ -138,10 +136,13 @@
                 <h2>{{ $row->getCourse->name }}</h2>
                 <ul>
                     @foreach($row->getCourse->getTopics as $topic)
-                    <li>{{ $topic->topic }}
-                        @if($row->getTopic->id  == $topic->id)
-                        <i class="fas fa-hand-point-left"></i>
-                        @endif
+                    <li>
+                        <a href="{{ $topic->link }}">
+                            {{ $topic->topic }}
+                            @if($row->getTopic->id  == $topic->id)
+                            <i class="fas fa-hand-point-left"></i>
+                            @endif
+                        </a>
                     </li>
                     @endforeach
                 </ul>

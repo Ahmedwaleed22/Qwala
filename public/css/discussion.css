@@ -1,0 +1,125 @@
+.content {
+	margin-top: 150px;
+}
+.left-section {
+	width: 1200px;
+	background: #e2e2e2;
+	margin-left: 100px;
+	padding: 30px;
+	overflow: scroll;
+	display: grid;
+  	grid-template-columns: auto auto auto;
+	max-height: 500px;
+	min-height: 500px;
+}
+.left-section .item {
+	background: #009879;
+	width: 350px;
+	height: 300px;
+	color: #fff;
+	margin-bottom: 30px;
+	padding: 10px;
+}
+.left-section .item .description {
+	margin-top: 10px;
+	height: 100px;
+	overflow-y: scroll;
+}
+.left-section .item .start_time span {
+	font-style: italic;
+}
+@media screen and (max-width: 1400px) {
+	.left-section {
+		max-width: 700px;
+		width: 100%;
+		margin-left: 0;
+		right: 0;
+		left: 0;
+		margin: auto;
+		float: center;
+		margin-bottom: 50px;
+	}
+	.left-section .item {
+		width: auto;
+		height: 150px;
+	}
+}
+.left-section .item h2 {
+	margin-bottom: 2px;
+}
+.left-section .item h2 .subtopic {
+	color:  #d4d4d4;
+	font-size: 18px;
+}
+.left-section .item .author {
+	display: block;
+	font-style: italic;
+	font-size: 20px;
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+.left-section .item a {
+	color: #fff;
+}
+.right-section {
+	margin:  0;
+	margin-left: 50px;
+	width: 450px;
+	background: #e2e2e2;
+	max-height: 500px;
+	min-height: 500px;
+}
+.right-section .form .title {
+	text-align: center;
+	padding-top: 30px;
+    margin-bottom: 20px;
+}
+.right-section .form form {
+	margin-top: 40px;
+	width: 350px;
+	right: 0;
+	left: 0;
+	margin: auto;
+}
+.right-section .form form input, select, textarea {
+	display: block;
+	width: 350px;
+	margin-bottom: 10px;
+	padding: 10px;
+	outline: none;
+	border: 1px solid #d4d4d4;
+	background: #fff;
+}
+.right-section .form form button {
+	color:  #fff;
+	background: #009879;
+	outline: none;
+	border: 1px solid #008e77;
+	width: 350px;
+	padding: 10px;
+	cursor: pointer;
+}
+@media screen and (max-width: 1400px) {
+	.right-section {
+		margin-left: 0;
+	}
+	.right-section .form form {
+		width: auto;
+		text-align: center;
+	}
+	.right-section .form form input, select, textarea {
+		width: 85% !important;
+		margin-right: 0;
+		right: 0;
+		left: 0;
+		margin: auto;
+	}
+	.right-section .form form button {
+		width: 85% !important;
+		margin-right: 0;
+		right: 0;
+		left: 0;
+		margin: auto;
+		margin-top: 10px;
+	}
+}

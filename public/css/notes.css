@@ -36,6 +36,15 @@
 .notes .note .question {
 	margin-bottom: 10px;
 }
-.notes .note .answer {
-	color: rgb(241 111 0)
+.notes .note .answer .answered {
+	color: rgb(241 111 0);
+	font-size: 30px;
+}
+.notes .note .answer .show-answer {
+	color: #007AC6;
+	cursor: pointer;
+	font-size: 20px;
+}
+.notes .note .answer .show-answer:hover {
+	text-decoration: underline;
 }

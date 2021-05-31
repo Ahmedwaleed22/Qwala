@@ -293,6 +293,10 @@ body {
   min-height: 100px;
   padding: 10px
 }
+.left-section .card li a {
+  color: #fff;
+  text-decoration: none;
+}
 .left-section .card h2 {
   font-size: 30px;
 }

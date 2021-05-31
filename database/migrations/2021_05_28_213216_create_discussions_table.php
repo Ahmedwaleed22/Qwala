@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CourseTopics extends Migration
+class CreateDiscussionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,14 @@ class CourseTopics extends Migration
      */
     public function up()
     {
-        Schema::create('topics', function (Blueprint $table) {
+        Schema::create('discussions', function (Blueprint $table) {
             $table->id();
-            $table->string('topic');
             $table->foreignId('course_id')->constrained('courses')->onDelete('cascade');
+            $table->foreignId('topic_id')->constrained('topics')->onDelete('cascade');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->string('link');
+            $table->string('description');
+            $table->timestamp('start_time');
             $table->timestamps();
         });
     }
@@ -28,6 +32,6 @@ class CourseTopics extends Migration
      */
     public function down()
     {
-        Schema::drop('topics');
+        Schema::dropIfExists('discussions');
     }
 }

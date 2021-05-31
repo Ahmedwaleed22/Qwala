@@ -10,7 +10,7 @@
 				<span class="index">{{$index + 1}}.</span> {{ $row->question }}
 			</div>
 			<div class="answer">
-				- {{ $row->answer }}
+				<div class="show-answer" data-answer="- {{ $row->answer }}" onclick="show_answer(event)">Show Answer</div>
 			</div>
 		</div>
 	@endforeach

@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TheoreticalController;
+use App\Http\Controllers\DiscussionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,3 +43,6 @@ Route::get('/logout', [AuthenticationController::class, 'logout'])->name("logout
 [*] Theoretical Questions Routes
 */
 Route::get('/theoretical/questions/{topic_id}', [TheoreticalController::class, 'questions']);
+
+Route::get('/discussion', [DiscussionController::class, 'index'])->name('discussion');
+Route::post('/discussion/create', [DiscussionController::class, 'store']);

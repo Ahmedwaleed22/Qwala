@@ -12,3 +12,11 @@
 		}
 	});
 })();
+
+function show_answer(event) {
+	let target = event.target;
+	let answer = target.getAttribute('data-answer');
+	target.classList.add('answered');
+	target.classList.remove('show-answer');
+	target.innerHTML = answer;
+}

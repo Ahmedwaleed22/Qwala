@@ -29,7 +29,7 @@ class HomeController extends Controller
     public function participate(Request $request) {
         $request->validate([
             'date' => ['date', 'nullable'],
-            'topic_id' => ['required'],
+            'course_id' => ['required'],
         ]);
 
         // If Empty Date Set To Today
