@@ -51,7 +51,7 @@
                 </thead>
                 <tbody class="active-row">
                     @foreach($participated as $row)
-                    @if(\Carbon\Carbon::parse($row->participated_at)->format('d/m/Y') >= date('d/m/Y', time()))
+                    @if(\Carbon\Carbon::parse($row->participated_at)->format('d/m/Y') <= date('d/m/Y', time()))
                     <tr>
                         <form method="post" action="/participate">
                             @csrf
@@ -110,7 +110,7 @@
                 </thead>
                 <tbody class="active-row">
                     @foreach($participated as $row)
-                    @if(\Carbon\Carbon::parse($row->participated_at)->format('d/m/Y') < date('d/m/Y', time()))
+                    @if(\Carbon\Carbon::parse($row->participated_at)->format('d/m/Y') > date('d/m/Y', time()))
                     <tr>
                         <form method="post" action="/participate">
                             @csrf

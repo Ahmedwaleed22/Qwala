@@ -46,3 +46,11 @@ Route::get('/theoretical/questions/{topic_id}', [TheoreticalController::class, '
 
 Route::get('/discussion', [DiscussionController::class, 'index'])->name('discussion');
 Route::post('/discussion/create', [DiscussionController::class, 'store']);
+
+Route::get('/forgetpassword', [AuthenticationController::class, 'forgetpassword'])->name('forgetpassword');
+
+Route::post('/resetpassword', [AuthenticationController::class, 'resetpassword']);
+
+Route::get('/resetpassword/{token}', [AuthenticationController::class, 'reset_password_with_token']);
+
+Route::post('/confirmresetpassword', [AuthenticationController::class, 'confirmresetpassword']);
