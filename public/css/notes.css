@@ -37,14 +37,22 @@
 	margin-bottom: 10px;
 }
 .notes .note .answer .answered {
-	color: rgb(241 111 0);
+	color: rgb(0 122 198);
 	font-size: 30px;
 }
 .notes .note .answer .show-answer {
-	color: #007AC6;
+	color:  #fff;
 	cursor: pointer;
 	font-size: 20px;
+	padding: 10px;
+	background: rgb(0, 122, 198);
+	width: 200px;
+	border-radius: 20px;
+	text-align: center;
+	right: 0;
+	margin-left: auto;
+	transition: background 0.3s;
 }
 .notes .note .answer .show-answer:hover {
-	text-decoration: underline;
+	background: rgb(0, 112, 181);
 }

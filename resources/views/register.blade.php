@@ -1,11 +1,17 @@
 @extends('includes/master')
 @section('content')
+
+@if(session()->has('errors'))
+@foreach($errors->all() as $error)
+<div class="error">{{ $error }}</div>
+@endforeach
+@endif
 <div class="login-dark">
 	<form action="/register" method="post">
 		@csrf
 		<h2 class="sr-only">Register Form</h2>
 		<div class="illustration">
-			<i class="fal fa-plus-hexagon"></i>
+			<i class="fas fa-user"></i>
 		</div>
 		<div class="form-group">
 			<input class="form-control" type="text" name="name" placeholder="Username">

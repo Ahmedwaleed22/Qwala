@@ -8,7 +8,7 @@
 		@csrf
 		<h2 class="sr-only">Login Form</h2>
 		<div class="illustration">
-			<i class="fal fa-lock-alt"></i>
+			<i class="fas fa-sign-in-alt"></i>
 		</div>
 		<div class="form-group">
 			<input class="form-control" type="text" name="name" placeholder="Username or Email">

@@ -9,7 +9,7 @@ class topic extends Model
 {
     use HasFactory;
 
-    public function getQuestions() {
-        return $this->hasMany('\App\Models\question');
+    public function getSubTopics() {
+        return $this->hasMany('\App\Models\SubTopic', 'topic_id');
     }
 }

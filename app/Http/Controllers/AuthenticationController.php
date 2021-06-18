@@ -35,11 +35,15 @@ class AuthenticationController extends Controller
     }
 
     public function store(Request $request) {
-        $request->validate([
+        $validation = Validator($request->all(), [
             'name' => ['required', 'unique:users', 'max:255'],
             'email' => ['required', 'unique:users', 'max:255'],
             'password' => ['required', 'max:255'],
         ]);
+
+        if ($validation->fails()) {
+            return redirect()->back()->withErrors($validation->errors());
+        }
 
         $user = User::create();
 
@@ -98,20 +102,20 @@ class AuthenticationController extends Controller
         //Generate, the password reset link. The token generated is embedded in the link
         $link = config('base_url') . 'password/reset/' . $token . '?email=' . urlencode($user->email);
 
-        try {
-            Mail::send(
-                'email.forget',
-                ['token' => $token],
-                function ($message) use ($email) {
-                    $message->to($email);
-                    $message->subject('Your Qwala Password Reset Link');
-                }
-            );
+        Mail::send(
+            'email.forget',
+            ['token' => $token],
+            function ($message) use ($email) {
+                $message->to($email);
+                $message->subject('Your Qwala Password Reset Link');
+            }
+        );
 
-            return true;
-        } catch (\Exception $e) {
-            return false;
+        if (Mail::failures()) {
+            // return failed mails
+            return new Error(Mail::failures()); 
         }
+
     }
 
     public function reset_password_with_token(Request $request) {

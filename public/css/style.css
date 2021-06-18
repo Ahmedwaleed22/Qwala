@@ -25,8 +25,12 @@ body {
   background: red;
   color: #fff;
 }
+.info {
+  background: #007AC6;
+  color: #fff;
+}
 .login-dark {
-  height: 969px;
+  height: 100vh;
   /*background: #475d62 url(../img/background.jpg);*/
   background-size: cover;
   position: relative;
@@ -39,7 +43,7 @@ body {
   border-radius: 4px;
   transform: translate(-50%, -50%);
   position: absolute;
-  top: 50%;
+  top: 47%;
   left: 50%;
   color: #fff;
   box-shadow: 3px 3px 4px rgba(0,0,0,0.2);
@@ -223,7 +227,7 @@ body {
   max-width: 1000px;
   float: left;
   margin-right: 50px;
-  margin-top: 47px
+  margin-top: 47px;
 }
 .groupid {
   background: #009879;
@@ -237,7 +241,6 @@ body {
 .groupid form select {
   display: block;
   width: 300px;
-  margin-bottom: 10px;
   outline: none;
   border: none;
   padding: 2px 5px
@@ -291,7 +294,8 @@ body {
   background: #007AC6;
   color: #fff;
   min-height: 100px;
-  padding: 10px
+  padding: 10px;
+  font-family: sans-serif;
 }
 .left-section .card li a {
   color: #fff;
@@ -299,6 +303,9 @@ body {
 }
 .left-section .card h2 {
   font-size: 30px;
+}
+.left-section .card .subtopic {
+  margin-left: 20px;
 }
 .left-section i {
   font-size: 20px;

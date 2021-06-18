@@ -13,7 +13,8 @@ class enrollment extends Model
         'user_id',
         'course_id',
         'participated_at',
-        'topic_id'
+        'topic_id',
+        'subtopic_id'
     ];
 
     public function getCourse() {

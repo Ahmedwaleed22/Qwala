@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CoursesEnrollments extends Migration
+class CreateSubtopicsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CoursesEnrollments extends Migration
      */
     public function up()
     {
-        Schema::create('enrollments', function (Blueprint $table) {
-            $table->engine = 'MyISAM';
+        Schema::create('subtopics', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('participated_at');
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->foreignId('course_id')->constrained('courses')->onDelete('cascade');
+            $table->string('topic');
+            $table->string('link');
             $table->foreignId('topic_id')->constrained('topics')->onDelete('cascade');
             $table->timestamps();
         });
@@ -31,6 +29,6 @@ class CoursesEnrollments extends Migration
      */
     public function down()
     {
-        Schema::drop('enrollments');
+        Schema::dropIfExists('subtopics');
     }
 }
